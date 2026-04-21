@@ -1,31 +1,101 @@
-!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
-<head>
-  <meta charset="UTF-8">
-  <title>카피조우 소개</title>
-  <link rel="stylesheet" href="./css/style.css">
-</head>
-<body>
-
-  <h1>카피조우</h1>
-
-  <!-- 이미지는 부모 p태그에 정렬 설정이 없어 기본값인 왼쪽에 위치합니다 -->
-  <p>
-    <img src="./assets/capyzou.png" alt="카피조우 증명사진">
-  </p>
-
-  <!-- 중앙 정렬이 필요한 글자들에만 txt-center 클래스를 넣습니다 -->
-  <p class="txt-center">
-    당근 농장을 운영하고 있습니다.<br>
-    편하게 팔로우해 주세요!
-  </p>
-
-  <!-- 수평 메뉴로 만들 리스트입니다 -->
-  <ul class="nav txt-center">
-    <li><a href="#">Capitter</a></li>
-    <li><a href="#">Capistagram</a></li>
-    <li><a href="#">Capybook</a></li>
-  </ul>
-
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="./styles.css" />
+    <title>FARM CAPYZOU</title>
+  </head>
+  <body>
+    <header>
+      <h1><img src="./assets/logo.png" alt="FARM CAPYZOU" /></h1>
+      <nav>
+        <ul>
+          <li><a href="#">HOME</a></li>
+          <li><a href="#">ABOUT</a></li>
+          <li><a href="#">BLOG</a></li>
+          <li><a href="#">SHOP</a></li>
+          <li><a href="#">CONTACT</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div>
+      <main>
+        <article>
+          <h2>당근 농장의 하루를 소개합니다</h2>
+          <p>
+            <time datetime="2026-04-21T16:20">
+              2026sus 4월 21일 오후 4시 20분
+            </time>
+          </p>
+          <p>
+            <img src="./assets/eyecatch.png" alt="농원에 있는 카피조우 그림" />
+          </p>
+          <h3>6:00~ 당근 수확과 아침 식사</h3>
+          <p>
+            아침에는 6시쯤 일어납니다. 언제까지나 이불 속에 파묻혀 있고 싶지만,
+            영차! 하고 힘내서 일어납니다.<br />밖에 나가면 먼저 해님에게 '안녕,
+            좋은 아침이에요.'라고 인사.
+          </p>
+          <p>
+            그다음 잘 여문 당근을 수확합니다.<br />
+            못난이 당근은 제가 아침밥으로 먹습니다.<br />
+            수확을 하면서 아침도 해결할 수 있어서 무척 효율적입니다!<br />
+          </p>
+          <figure>
+            <img src="./assets/carrots.png" alt="못난이 당근 그림" />
+            <figcaption>모양이 못생겨서 내가 먹음!!!</figcaption>
+          </figure>
+          <p>모양이 못생겨서 내가 먹은 당근들</p>
+          <h3>8:30~12:30 슈퍼마켓이나 휴게소로 출하</h3>
+          <p>
+            아침에 캔 당근을 산지 직송 매장으로 운반합니다. 일과 중 가장 힘을
+            써야 하는 일이네요.<br />슬슬 리어카가 아니라 전기로 움직이는 차를
+            구입해볼까 생각하고 있어요.
+          </p>
+          <h3>12:30~18:00 밭일과 저녁 식사</h3>
+          <p>
+            당근의 상태를 보면서 물을 주거나, 벌레를 잡거나, 비닐을 씌우거나
+            합니다.<br />지금은 당근이 메인이지만, 장기적으로는 더 많은 작물을
+            키우고 싶어서 관련 준비도 같이 하고 있습니다.
+          </p>
+          <h3>18:30~ 목욕과 취침</h3>
+          <p>느긋하게 목욕을 하고 잠자리에 듭니다. 이불 속은 천국입니다.</p>
+        </article>
+      </main>
+      <aside>
+        <nav>
+          <h2>Category</h2>
+          <ul>
+            <li><a href="#">농가의 일상(4)</a></li>
+            <li><a href="#">채소 재배 노하우(5)</a></li>
+            <li><a href="#">카피조우 레시피(2)</a></li>
+            <li><a href="#">농장 경영(2)</a></li>
+          </ul>
+        </nav>
+        <nav>
+          <h2>Recent Articles</h2>
+          <ul>
+            <li><a href="#">온실 재배 주의할 점 TOP10</a></li>
+            <li><a href="#">현역 농부가 해충 퇴치법을 알려드립니다</a></li>
+            <li><a href="#">집에서도 가능! 화분 재배의 핵심</a></li>
+            <li><a href="#">간단하게 만드는 당근 요리 소개!</a></li>
+            <li>
+              <a href="#"
+                >농사지어서 먹고살 수 있을까? 제일 궁금해하는 연 수입 대공개</a
+              >
+            </li>
+            <li><a href="#">안녕하세요. FARM CAPYZOU입니다.</a></li>
+          </ul>
+        </nav>
+        <p>
+          <a href="#"
+            ><img src="./assets/side_banner.png" alt="온라인 샵 배너"
+          /></a>
+        </p>
+      </aside>
+    </div>
+    <footer>
+      <p><small>© 3023 FARM CAPYZOU</small></p>
+    </footer>
+  </body>
 </html>
