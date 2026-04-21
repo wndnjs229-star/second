@@ -26,3 +26,4 @@ img {
 .text-center {
   .text-align: center;
 }
+예:) display: block을 넣으면 margin과 padding, border 작업에 따라 상하좌우로 위치가 변경된다.
