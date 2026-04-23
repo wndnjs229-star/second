@@ -1,7 +1,7 @@
 @charset "utf-8";
 
 body {
-  background-image: url(./assets/bg.png);
+  background-image: url(./../assets/bg.png);
   font-size: 16px;
   color: #333333;
 }
