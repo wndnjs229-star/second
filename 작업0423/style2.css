@@ -84,14 +84,14 @@ header nav ul {
 }
 
 .msgSec p.illust::before {
-  content: url(./images/deco_left.png);
+  content: url(../assets/deco_left.png);
   position: absolute;
   left: 320px;
   bottom: -30px;
 }
 
 .msgSec p.illust::after {
-  content: url(./images/deco_right.png);
+  content: url(../assets/deco_right.png);
   position: absolute;
   right: 320px;
   bottom: -30px;
