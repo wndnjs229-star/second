@@ -1,11 +1,11 @@
 @charset "utf-8";
 body {
-  font-family: 'Noto Serif KR', serif;
+  font-family: "Noto Serif KR", serif;
   font-size: 18px;
   color: #121212;
 }
 .ffJosefin {
-  font-family: 'Josefin Sans',sans-serif;
+  font-family: "Josefin Sans", sans-serif;
 }
 .innerWrap {
   width: 1240px;
@@ -15,7 +15,7 @@ body {
 main h2 {
   text-align: center;
   font-size: 60px;
-  letter-spacing: .05em;
+  letter-spacing: 0.05em;
   margin-bottom: 80px;
 }
 header {
@@ -102,16 +102,22 @@ header nav ul li a:hover {
   padding: 40px 64px;
   line-height: 1.2;
 }
-.word1 {font-size: 50px;}
-.word2 {font-size: 40px;}
-.word3 {font-size: 60px;}
+.word1 {
+  font-size: 50px;
+}
+.word2 {
+  font-size: 40px;
+}
+.word3 {
+  font-size: 60px;
+}
 .accessSec {
   margin-left: 48px;
 }
 .accessSec h3 {
   color: #cfafa3;
   font-size: 55px;
-  letter-spacing: .05em;
+  letter-spacing: 0.05em;
   margin-bottom: 8px;
 }
 .accessSec p {
@@ -194,7 +200,7 @@ footer {
 input[type="submit"]:hover {
   background-color: #c7887f;
   margin-left: 20px;
-  transition-property: background-color,margin-left;
+  transition-property: background-color, margin-left;
   transition-duration: 300ms;
   transition-timing-function: ease-in;
   transition-delay: 0ms;
@@ -223,3 +229,78 @@ header .scroll img {
   animation-timing-function: ease-out;
   animation-iteration-count: infinite;
 }
+/* 각각의 태그 포지션에서의 숫자들을 변동 시키며 확인해보고 어디가 변경되는지 확인하기 */
+@media screen and (max-width: 640px) {
+  .dateSec .layoutWrap {
+    display: block;
+  }
+  .innerWrap,
+  header nav ul,
+  form {
+    width: 100%;
+  }
+  header h1 img,
+  .msgSec p.illust img,
+  .dateSec .layoutWrap > p img {
+    width: 100%;
+  }
+  .msgSec p.illust::before {
+    left: -16px;
+    bottom: -80px;
+    transform: scale(0.7);
+  }
+  .msgSec p.illust::after {
+    right: -16px;
+    bottom: -80px;
+    transform: scale(0.7);
+  }
+  body {
+    font-size: 16px;
+  }
+  main h2 {
+    font-size: 44px;
+    margin-bottom: 60px;
+  }
+  header {
+    background: url(../images/hero_sp.jpg) no-repeat right top/cover;
+  }
+  header .innerWrap {
+    height: 90vh;
+  }
+  header h1 {
+    padding-top: 80px;
+  }
+  .msgSec p {
+    text-align: left;
+  }
+  .dateSec .dateDetailSec {
+    font-size: 36px;
+    margin: 0 0 0 25%;
+    padding: 20px 20px;
+  }
+  .word1 {
+    font-size: 20px;
+  }
+  .word2 {
+    font-size: 25px;
+  }
+  .word3 {
+    font-size: 30px;
+  }
+  .dateSec .layoutWrap > div {
+    padding-top: 0;
+    transform: translateY(-50px);
+  }
+  .accessSec h3 {
+    font-size: 44px;
+  }
+  .accessSec {
+    margin: 32px 0 0 32px;
+  }
+  .dateSec {
+    padding-bottom: 40px;
+    margin-bottom: 250px;
+  }
+}
+/* srcset="images/hero_text.png 1x, images/hero_text@2x.png 2x" */
+/* html에서 22번줄의 경우 레티나 디스플레이(맥)와 같은 환경에서 고해상도의 파일을 볼때 활용하는 법 */
