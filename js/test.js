@@ -1,35 +1,58 @@
-// const result = document.getElementById("result");
+const students = [
+  { name: '김철수', score: 85 },
+  { name: '이영희', score: 92 },
+  { name: '박민수', score: 78 },
+  { name: '정수진', score: 96 },
+];
 
-// function oldAdd(a, b) {
-//   return a + b;
-// }
+const renderStudents = (studentList) => {
+  const container = document.getElementById('studentList');
+  container.innerHTML = studentList
+    .map(
+      (student) => `
+    <div class="student-card ${student.score >= 90 ? 'high-score' : ''}">
+    <h3>${student.name}</h3>
+    <p>점수: ${student.score}점</p>
+    <p>등급: ${getGrade(student.score)}</p>
+    </div>
+    `,
+    )
+    .join('');
+};
 
-// const newAdd = (a, b) => a + b;
-// // ` ` 백틱은 문자의 열과 자바스크립트의 문자를 연결시킬 때 사용한다.
-// // 자바스크립트에서 사용하고, html과 연결시킬때 사용한다.
-// // 변수가 들어가던 안들어가던 백틱 사용은 무조건 필요로 한다.
-// result.innerHTML = `
-// <p> 기존함수: ${oldAdd(5, 3)} </p>
-// <p> 새로운 함수: ${newAdd(5, 3)} </p>
-// `;
+const getGrade = (score) => {
+  if (score >= 90) return 'A';
+  if (score >= 80) return 'B';
+  if (score >= 70) return 'C';
+  return 'D';
+};
 
-const scores = [85, 92, 78, 96, 88, 73, 93];
-const highScores1 = scores.filter((score) => score >= 90);
+// 보너스 점수 추가 이벤트
+document.getElementById('addBonusBtn').addEventListener('click', () => {
+  // 모든 학생에게 5점 추가 (단, 100점 초과 불가)
+  students.forEach((student) => {
+    student.score = Math.min(student.score + 5, 100);
+  });
+  renderStudents(students);
+});
 
-console.log(highScores1);
+renderStudents(students);
 
-function (score) {
-  return score >= 90;
-}
-// 배열의 이름은 전체가 전부가 아니다. 시작의 위치부터 걸러내야한다.
-// 각 칸마다 하나씩 꺼내어 너가 인식하고 그 인식된 값을 90과 비교하라
-// 변수가 담겨야 한다. 함수가 있어야 비교를 할 수 있다.
+// students 배열: 이름 & 점수
+// {~~~~~~} : 객체이다
+// renderStudent() 함수 : 학생 명단을 참고하여 브라우저 화면에 그려준다
+// studentList라는 재료를 넣으면 화면에 표시해준다
+// 이 상황은 '조리기구'에 비유할 수 있다.
 
-// score => score >= 90
-// 매개변수
-// score는 재료인데 filter 함수가 처리할 데이터이다(여기서는 하나의 점수)
-// => 이 재료를 가지고 우측의 행동을 진행하라
-// score >= 90 재료가 90이상인지 확인하여 걸러내라
+// map 명단을 하나씩 확인하여 HTML 태그로 변경하는 과정
+// ${student.score >= 90 ? 'high-score' : ''}
+// 너의 점수가 90점 이상이니?
+// true: high-score(CSS) 배경색이 변경된다
+// false: 아무것도 설정하지 않는다
 
-// 필터링 과정 (거름망 통과)
-// 컴퓨터는 scores 배열에 들어있는 7개의 점수를 하나씩 꺼내어 조건문(score)
+// join: 위에서 map을 실행하면 여러 세트의 HTML 태그가 만들어지는데
+// 그 것들을 모두 하나로 결합한다
+
+// 이 코드는 "학생 명단을 하나씩 훑으면서(map),
+// 점수에 따라 색칠 공부를 좀 하고(삼항 연산자)
+// 예쁜 HTML 카드를 "
