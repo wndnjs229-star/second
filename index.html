@@ -4,13 +4,42 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./css/stlye.css" />
-    <title>화살표 함수</title>
+    <title>Document</title>
   </head>
   <body>
-    <h1>학생 성적 관리 시스템</h1>
-    <div id="studentList"></div>
-    <button id="addBonusBtn">모든 학생에게 보너스 5점 추가</button>
+    <div class="container">
+      <h2>상품 목록</h2>
+      <div class="product">사과 - 3000워</div>
+      <div class="product">바나나 - 2000원</div>
+      <div class="product">오렌지 - 4000원</div>
+      <div class="product">포도 - 5000원</div>
+    </div>
 
-    <script src="./js/test.js"></script>
+    <button onclick="highlightProducts()">상품 강조하기</button>
+
+    <script>
+      function highlightProducts() {
+        const container = document.querySelector('.container');
+        const products = document.querySelectorAll('.product');
+
+        container.style.backgroundColor = '#f0f0f0';
+        container.style.padding = '20px';
+
+        products.forEach((product, index) => {
+          product.style.backgroundColor = '#ffeb3b';
+          product.style.padding = '10px';
+          product.style.margin = '5px';
+          product.style.borderRadius = '5px';
+        });
+      }
+    </script>
   </body>
 </html>
+
+<!-- products.forEach(function (product, index)) -->
+<!-- products: 디자인을 변경할 대상이 담긴 '목록'이다 -->
+<!-- forEach 함수: 목록에 있는 것을 하나 하나 빠짐없이 다 불러와!!! -->
+<!-- function (profuct, index):
+ product 지금 막 바구니에서 꺼낸 '현재 대상'
+ index 이 녀석이 몇 번째인지 알려주는 번호표 -->
+<!-- 짝수 상품만 빼고 배경색만 노란색을 만들때에는 index를 이용하라-->
